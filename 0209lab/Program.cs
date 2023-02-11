@@ -101,6 +101,15 @@ namespace _0209lab
                 {
                     throw new Exception("This credit card is expired");
                 }
+                Console.WriteLine("Enter money balance: ");
+                string money = Console.ReadLine();
+                if (money.All(char.IsDigit) == false)
+                {
+                    throw new Exception("Money doesn't allow anything except numbers");
+                }
+                double doublemoney = Convert.ToDouble(money);
+
+                Creditcard creditcard = new Creditcard(cardnumber, firstname, lastname, dateResult, CVC, doublemoney);
 
             }
             catch (Exception ex)
